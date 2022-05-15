@@ -20,7 +20,16 @@ def yes_no_checker(question_text):
 
         # If anything else is input show error message
         else:
-            print("Error - Please enter Yes or No")
+            print("Error - Please enter yes or no")
+
+
+def instructions():
+    print("=== How to play ===")
+    print()
+    print("Instructions go here")
+    print()
+    print("Program continues")
+    print()
 
 
 # Main routine
@@ -28,4 +37,4 @@ played_before = yes_no_checker("Have you played before: ")
 
 # If users input is no show instructions
 if played_before == "No":
-    print("Instructions")
+    instructions()

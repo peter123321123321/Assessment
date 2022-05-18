@@ -4,7 +4,7 @@ import random
 days_of_the_week = [["Monday", "rahina"], ["Tuesday", "ratu"], ["Wednesday", "raapa"],
                     ["Thursday", "rapare"], ["Friday", "ramere"], ["Saturday", "rahoroi"],
                     ["Sunday", "ratapu"]]
-
+days_of_the_week
 # Keeps track of player score and total questions
 player_score = 0
 total = 0

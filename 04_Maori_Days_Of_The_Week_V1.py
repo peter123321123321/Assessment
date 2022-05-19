@@ -4,7 +4,7 @@ import random
 days_of_the_week = [["Monday", "rahina"], ["Tuesday", "ratu"], ["Wednesday", "raapa"],
                     ["Thursday", "rapare"], ["Friday", "ramere"], ["Saturday", "rahoroi"],
                     ["Sunday", "ratapu"]]
-days_of_the_week
+
 # Keeps track of player score and total questions
 player_score = 0
 total = 0
@@ -13,16 +13,60 @@ total = 0
 random.shuffle(days_of_the_week)
 for i in days_of_the_week:
     total += 1
+    if i[1] == "rahina":
 
-    # Asks user for input
-    question = input(f"What is the maori name for {i[0]}")
+        # Ask user for input, if input is correct print correct
+        # else print incorrect
+        # repeat for each day of the week
+        question = input(f"What is the Maori word for {i[0]}")
+        if question == "rahina":
+            print("correct")
+            player_score += 1
+        else:
+            print("incorrect")
+    if i[1] == "ratu":
+        question = input(f"What is the Maori word for {i[0]}")
+        if question == "ratu":
+            print("correct")
+            player_score += 1
+        else:
+            print("incorrect")
+    if i[1] == "raapa":
+        question = input(f"What is the Maori word for {i[0]}")
+        if question == "raapa":
+            print("correct")
+            player_score += 1
+        else:
+            print("incorrect")
+    if i[1] == "rapare":
+        question = input(f"What is the Maori word for {i[0]}")
+        if question == "rapare":
+            print("correct")
+            player_score += 1
+        else:
+            print("incorrect")
+    if i[1] == "ramere":
+        question = input(f"What is the Maori word for {i[0]}")
+        if question == "ramere":
+            print("correct")
+            player_score += 1
+        else:
+            print("incorrect")
+    if i[1] == "rahoroi":
+        question = input(f"What is the Maori word for {i[0]}")
+        if question == "rahoroi":
+            print("correct")
+            player_score += 1
+        else:
+            print("incorrect")
+    if i[1] == "ratapu":
+        question = input(f"What is the Maori word for {i[0]}")
+        if question == "ratapu":
+            print("correct")
+            player_score += 1
+        else:
+            print("incorrect")
 
-    # If user is correct print 'correct' anything else print 'incorrect'
-    if question == i[1]:
-        print("correct")
-        player_score += 1
-    else:
-        print("Incorrect")
 
 # Shows player their final score
 print(f"You got {player_score}/{total}")

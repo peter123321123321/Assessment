@@ -34,28 +34,31 @@ def instructions():
 
 
 def continue_or_quit():
-    while True:
-        print("[1] Days of the week in Maori\n"
-              "[2] Numbers in Maori\n"
-              "[3] Leave the quiz")
-        # Ask user if they want to continue or quit
-        choice = int(input("What would you like to try"))
+    try:
+        while True:
+            print("[1] Days of the week in Maori\n"
+                  "[2] Numbers in Maori\n"
+                  "[3] Leave the quiz")
+            # Ask user if they want to continue or quit
+            choice = int(input("What would you like to try"))
 
-        # If input is 1
-        if choice == 1:
-            days_of_week()
-        # If input is 2
-        elif choice == 2:
-            print("maori numbers")
-
-        # If input is 3
-        elif choice == 3:
-            print("Goodbye")
-            exit()
-
-        # else input is not yes or no print error message
-        else:
-            print("Error - Please enter a number between 1 and 3")
+            # If input is 1
+            if choice == 1:
+                days_of_week()
+                break
+            # If input is 2
+            elif choice == 2:
+                print("maori numbers")
+                break
+            # If input is 3
+            elif choice == 3:
+                print("Goodbye")
+                exit()
+            # else input is not yes or no print error message
+            else:
+                print("Error - Please enter a number between 1 and 3")
+    except ValueError:
+        print("Error - Please enter a number between 1 and 3")
 
 
 def days_of_week():
@@ -70,10 +73,9 @@ def days_of_week():
     total = 0
 
     # Shuffles list
-    total += 1
     random.shuffle(days_of_the_week)
     for i in days_of_the_week:
-
+        total += 1
         # Asks user for input
         question = input(f"What is the maori name for {i[0]}")
 
@@ -88,6 +90,13 @@ def days_of_week():
     print(f"You got {player_score}/{total}")
 
 
+def formatter(symbol, text):
+    sides = symbol * 3
+    formatted_text = f"{sides} {text} {sides}"
+    top_bottom = symbol * len(formatted_text)
+    return f"{top_bottom}\n{formatted_text}\n{top_bottom}"
+
+
 # Main routine
 played_before = yes_no_checker("Have you played before: \n")
 
@@ -95,17 +104,21 @@ played_before = yes_no_checker("Have you played before: \n")
 if played_before == "No":
     instructions()
 
-quiz_continue = input("Would you like to try a quiz or quit\n"
-                      "Enter to continue or 'X' to quit\n").upper()
-if quiz_continue == "":
-    continue_or_quit()
-elif quiz_continue == "X":
-    print("Goodbye")
-    exit()
+quiz_continue = 1
+while quiz_continue != "":
+    quiz_continue = input("Would you like to try a quiz or quit\n"
+                          "Enter to continue or 'X' to quit\n").upper()
+    if quiz_continue == "":
+        continue_or_quit()
+    elif quiz_continue == "X":
+        print(formatter("=", "Goodbye"))
+        exit()
 
-play_again = input("Would you like to play again\n"
-                   "Enter to continue or 'X' to quit")
-if play_again == "":
-    continue_or_quit()
+play_again = ""
+while play_again != "X":
+    play_again = input("Would you like to play again\n"
+                       "Enter to continue or 'X' to quit").upper()
+    if play_again == "":
+        continue_or_quit()
 
-print("goodbye")
+print(formatter("=", "goodbye"))

@@ -1,27 +1,35 @@
-def continue_or_quit():
+def continue_or_quit(continue_text):
     while True:
-        print("[1] Days of the week in Maori\n"
-              "[2] Numbers in Maori\n"
-              "[3] Leave the quiz")
+        print("[1] Redirects to Maori days of the week quiz\n"
+              "[2] Redirects to Maori numbers quiz\n"
+              "[3] Quit the quiz")
         # Ask user if they want to continue or quit
-        choice = int(input("What would you like to do"))
+        try:
+            choice = int(input(continue_text))
 
-        # If input is 1
-        if choice == 1:
-            print("Goodbye")
-            exit()
+            # If input is 1
+            if choice == 1:
+                return 1
 
-        # If input is 2
-        elif choice == 2:
-            print("days_of_the_week()")
+            # If input is 2
+            elif choice == 2:
+                return 2
 
-        # If input is 3
-        elif choice == 3:
-            print("maori_numbers")
-        # else input is not yes or no print error message
-        else:
+            # If input is 3
+            elif choice == 3:
+                print("Thanks for learning with us. We hope To see you next time")
+                exit()
+
+            # else input is not yes or no print error message
+            else:
+                print("Error - Please enter a number between 1 and 3")
+        except ValueError:
             print("Error - Please enter a number between 1 and 3")
 
 
 # Main Routine
-continue_or_quit()
+choose_quiz = continue_or_quit("Please choose from on of the above options")
+if choose_quiz == 1:
+    print("Redirect to Maori days of the week quiz")
+elif choose_quiz == 1:
+    print("Redirect to Maori numbers quiz")

@@ -15,7 +15,7 @@ for i in days_of_the_week:
     total += 1
 
     # Asks user for input
-    question = input(f"What is the maori name for {i[0]}")
+    question = input(f"What is the maori word for {i[0]}")
 
     # If user is correct print 'correct' anything else print 'incorrect'
     if question == i[1]:

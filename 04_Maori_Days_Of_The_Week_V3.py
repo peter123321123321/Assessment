@@ -10,22 +10,25 @@ def days_of_week():
 
     # Keeps track of player score and total questions
     player_score = 0
-    total = 0
-
     # Shuffles list
-    total += 1
     random.shuffle(days_of_the_week)
     for i in days_of_the_week:
-
         # Asks user for input
-        question = input(f"What is the maori name for {i[0]}")
+        question = input(f"What is the maori word for {i[0]}")
 
         # If user is correct print 'correct' anything else print 'incorrect'
         if question == i[1]:
-            print("correct")
             player_score += 1
+            print("correct")
         else:
-            print("Incorrect")
+            print(f"Incorrect, the answer was {i[1]}")
 
     # Shows player their final score
-    print(f"You got {player_score}/{total}")
+    if player_score != 7:
+        print(f"Your final score is {player_score}/7")
+    else:
+        print(f"CONGRATULATIONS - You got a perfect score")
+
+
+# Main Routine
+days_of_week()

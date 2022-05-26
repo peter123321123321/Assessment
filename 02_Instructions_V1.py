@@ -38,3 +38,5 @@ played_before = yes_no_checker("Have you played before: ")
 # If users input is no show instructions
 if played_before == "No":
     instructions()
+else:
+    print("Program continues")

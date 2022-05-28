@@ -14,7 +14,7 @@ def days_of_week():
     random.shuffle(days_of_the_week)
     for i in days_of_the_week:
         # Asks user for input
-        question = input(f"What is the maori word for {i[0]}")
+        question = input(f"What is the maori word for {i[0]}").lower()
 
         # If user is correct print 'correct' anything else print 'incorrect'
         if question == i[1]:

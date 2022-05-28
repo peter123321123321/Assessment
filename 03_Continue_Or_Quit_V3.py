@@ -26,4 +26,4 @@ while check != "x":
         # Show user input
         print(f"You entered {choice}")
     except ValueError:
-        print("")
+        print("Please enter a number between 1 and 3")

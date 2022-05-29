@@ -81,6 +81,7 @@ def days_of_week():
     player_score = 0
     # Shuffles list
     random.shuffle(days_of_the_week)
+    print(formatter("=", "Welcome to the days of the week quiz"))
 
     for i in days_of_the_week:
         # Asks user for input
@@ -108,6 +109,8 @@ def maori_numbers():
 
     player_score = 0
     random.shuffle(num_list)
+    print(formatter("=", "Welcome to the days of the week quiz"))
+
     for i in num_list:
         print()
         attempt = input(f"What is the Maori word for {i[0]}").lower()

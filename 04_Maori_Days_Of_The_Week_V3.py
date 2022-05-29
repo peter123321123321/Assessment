@@ -19,7 +19,7 @@ def days_of_week():
         # If user is correct print 'correct' anything else print 'incorrect'
         if question == i[1]:
             player_score += 1
-            print("correct")
+            print("Well done, you're correct")
         else:
             print(f"Incorrect, the answer was {i[1]}")
 

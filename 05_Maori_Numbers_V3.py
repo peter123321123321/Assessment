@@ -8,7 +8,7 @@ def maori_numbers():
     player_score = 0
     random.shuffle(num_list)
     for i in num_list:
-        attempt = input(f"What is the Maori word for {i[0]}")
+        attempt = input(f"What is the Maori word for {i[0]}").lower()
         if attempt == i[1]:
             player_score += 1
             print(f"Correct")

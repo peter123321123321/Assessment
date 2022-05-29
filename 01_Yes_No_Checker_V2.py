@@ -1,4 +1,7 @@
 """01_Yes_No_Checker_V2
+simplifies input by converting it to lowercase.
+also allows for y or n input
+based off 01_Yes_No_Checker_V1
 """
 
 # Ask user if they've played before and converts to lowercase

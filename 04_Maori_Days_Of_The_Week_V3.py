@@ -1,3 +1,9 @@
+"""04_Maori_Days_Of_The_Week_V3
+converts 04_Maori_Days_Of_The_Week_V2 into a function
+make small quality of life changes
+e.g. better scoring, showing correct answer
+"""
+
 import random
 
 

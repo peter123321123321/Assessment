@@ -1,4 +1,6 @@
 """01_Yes_No_Checker_V3
+puts code in a while loop for easier testing
+based off 01_Yes_No_Checker_V2
 """
 
 check = ""

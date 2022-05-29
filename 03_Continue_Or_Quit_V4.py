@@ -1,9 +1,15 @@
+"""03_Continue_or_quit_V4
+converted 03_Continue_or_quit_V3 into a function"""
+
+
 def continue_or_quit(continue_text):
+    # loops code
     while True:
+        # Ask user if they want to continue or quit
         print("[1] Redirects to Maori days of the week quiz\n"
               "[2] Redirects to Maori numbers quiz\n"
               "[3] Quit the quiz")
-        # Ask user if they want to continue or quit
+        # adds try/accept for unexpected input
         try:
             choice = int(input(continue_text))
 

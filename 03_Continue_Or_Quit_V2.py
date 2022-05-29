@@ -1,5 +1,10 @@
-# Ask user if they want to continue or quit
-try:
+"""03_Continue_or_quit_V2
+Put code in while loop for easier testing based on 03_Continue_or_quit_V1"""
+
+# Loops code
+check = ""
+while check != "stop":
+    # Ask user if they want to continue or quit
     choice = int(input("Which quiz would you like to try\n"
                        "[1] Days of the week in Maori\n"
                        "[2] Maori numbers\n"
@@ -23,7 +28,3 @@ try:
 
     # Show user input
     print(f"You entered {choice}")
-except ValueError:
-    print("Please enter a number between 1 and 3")
-
-# doesnt loop

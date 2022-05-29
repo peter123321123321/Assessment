@@ -1,3 +1,8 @@
+"""04_Maori_Days_Of_The_Week_V2
+Shortens code of 04_Maori_Days_Of_The_Week_V1
+"""
+
+
 import random
 
 # Puts question and answers in the same list

@@ -10,18 +10,16 @@ general_knowledge = [["Monday", "rahina"], ["Tuesday", "ratu"], ["Wednesday", "r
                      ["October", "oketopa"], ["November", "noema"], ["December", "tihema"]]
 player_score = 0
 
-while True:
-    random.shuffle(general_knowledge)
-    # Shuffles list
-    for i in general_knowledge:
-        # Asks user for input
-        question = input(f"What is the maori word for {i[0]}")
+random.shuffle(general_knowledge)
+# Shuffles list
+for i in general_knowledge:
+    # Asks user for input
+    question = input(f"What is the maori word for {i[0]}")
 
-        # If user is correct print 'correct' anything else print 'incorrect'
-        if question == i[1]:
-            print("correct")
-            player_score += 1
-        else:
-            print(f"Incorrect, the answer was {i[1]}")
-            print(f"Well done You answered {player_score} out of {player_score + 1} questions")
-            exit()
+    # If user is correct print 'correct' anything else print 'incorrect'
+    if question == i[1]:
+        print("correct")
+        player_score += 1
+    else:
+        print(f"Incorrect, the answer was {i[1]}")
+        print(f"Well done You answered {player_score} out of {player_score + 1} questions")

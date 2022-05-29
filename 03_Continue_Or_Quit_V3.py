@@ -1,5 +1,11 @@
-check = 0
-while check != "x":
+"""03_Continue_or_quit_V3
+Put code in while true loop
+added try/except for unexpected inputs
+based on 03_Continue_or_quit_V2"""
+
+# loops code
+while True:
+    # adds try/accept for unexpected input
     try:
         # Ask user if they want to continue or quit
         choice = int(input("Which quiz would you like to try\n"

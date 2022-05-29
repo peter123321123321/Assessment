@@ -1,3 +1,9 @@
+"""04_Maori_Days_Of_The_Week_V1
+randomly shuffles a list of questions and asks the user them one at a time
+print if they're correct or incorrect and tracks there score
+"""
+
+
 import random
 
 # Puts question and answers in the same list

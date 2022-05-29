@@ -1,7 +1,13 @@
+""" 05_Maori_Numbers_V1
+randomly generate shuffled numbers and asks user
+the maori word for it until all numbers have been done
+"""
+
 import random
 
-
+# List of numbers
 num_list = [[1], [2], [3], [4], [5], [6], [7], [8], [9], [10]]
+# Randomly shuffle questions so its different each time
 random.shuffle(num_list)
 for i in num_list:
     # Ask user for input, if input is correct print correct

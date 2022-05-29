@@ -1,3 +1,6 @@
+"""03_Continue_or_quit_V1
+Give the user the choice between quizzes or quiting"""
+
 # Ask user if they want to continue or quit
 choice = int(input("Which quiz would you like to try\n"
                    "[1] Days of the week in Maori\n"

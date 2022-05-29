@@ -1,4 +1,5 @@
-"""0_Base_component_V2
+"""Final Version Maori Quiz
+This is the final version of my quiz including all finished components
 """
 
 # Functions go here
@@ -6,17 +7,18 @@ import random
 
 
 def yes_no_checker(question_text):
+    # Loops question
     while True:
 
         # Ask user if they've played before and converts to lowercase
         answer = input(question_text).lower()
 
-        # If user inputs 'yes' or 'y' continue with program
+        # If user inputs 'yes' or 'y' return Yes
         if answer == "yes" or answer == "y":
             answer = "Yes"
             return answer
 
-        # If user inputs 'no' or 'n' show instructions
+        # If user inputs 'no' or 'n' Return No
         elif answer == "no" or answer == "n":
             answer = "No"
             return answer
@@ -41,15 +43,15 @@ def instructions():
 
 
 def continue_or_quit(continue_text):
-    # loop question
+    # Loop question
     while True:
-        # show user options
+        # Show user options
         print()
         print("[1] Redirects to Maori days of the week quiz\n"
               "[2] Redirects to Maori numbers quiz\n"
               "[3] Quit the quiz")
-        # Ask user if they want to continue or quit
         try:
+            # Ask user if they want to continue or quit
             choice = int(input(continue_text))
 
             # If input is 1 return 1
@@ -66,10 +68,10 @@ def continue_or_quit(continue_text):
                 print(formatter("=", "Thanks for learning with us. We hope To see you next time"))
                 exit()
 
-            # else input is not yes or no print error message
+            # If anything else print error message
             else:
                 print("Error - Please enter a number between 1 and 3")
-        # if error print error message
+        # If error print error message
         except ValueError:
             print("Error - Please enter a number between 1 and 3")
 
@@ -81,7 +83,7 @@ def days_of_week():
                         ["Thursday", "rapare"], ["Friday", "ramere"], ["Saturday", "rahoroi"],
                         ["Sunday", "ratapu"]]
 
-    # Keeps track of player score and total questions
+    # Keeps track of player score
     player_score = 0
     # Shuffles list
     random.shuffle(days_of_the_week)
@@ -89,16 +91,16 @@ def days_of_week():
     for i in days_of_the_week:
         # Ask user for input
         print()
-        question = input(f"What is the maori name for {i[0]}").lower()
+        question = input(f"What is the Maori word for {i[0]} ").lower()
 
-        # If user is correct print 'correct' anything else print 'incorrect'
+        # If user is correct print 'correct' +1 player score anything else print 'incorrect'
         if question == i[1]:
             print(formatter("!", "Well done, you're correct"))
             player_score += 1
         else:
-            print(formatter("!", f"Incorrect, the answer was {i[1]}"))
+            print(formatter("!", f"Incorrect, the answer is {i[1]}"))
 
-    # if below 7 Shows player their final score else print perfect score message
+    # If below 7 Shows player their final score else print perfect score message
     print()
     if player_score != 7:
         print(f"Your final score is {player_score}/7")
@@ -107,26 +109,28 @@ def days_of_week():
 
 
 def maori_numbers():
-    # questions and answers in one list
+    # Puts question and answers in the same list
     num_list = [[1, "tahi"], [2, "rua"], [3, "toru"], [4, "wha"], [5, "rima"], [6, "ono"], [7, "whitu"],
                 [8, "waru"], [9, "iwa"], [10, "tekau"]]
 
-    # sey player score
+    # Keeps track of player score
     player_score = 0
 
-    # shuffle list
+    # Shuffle list
     random.shuffle(num_list)
     for i in num_list:
-        # ask user for input
+        # Ask user for input
         print()
-        attempt = input(f"What is the Maori word for {i[0]}").lower()
+        attempt = input(f"What is the Maori word for {i[0]} ").lower()
+
         if attempt == i[1]:
-            # if correct +1 to users score if correct then print correct else print incorrect
+            # If user is correct print 'correct' +1 player score anything else print 'incorrect'
             player_score += 1
             print(formatter("!", "Well done, you're correct"))
         else:
             print(formatter("!", f"Incorrect, the answer was {i[1]}"))
 
+    # If below 7 Shows player their final score else print perfect score message
     print()
     if player_score != 10:
         print(f"Your final score is {player_score}/10")
@@ -135,7 +139,7 @@ def maori_numbers():
 
 
 def formatter(symbol, text):
-    # formats text
+    # Formats text
     sides = symbol * 3
     formatted_text = f"{sides} {text} {sides}"
     top_bottom = symbol * len(formatted_text)
@@ -144,16 +148,17 @@ def formatter(symbol, text):
 
 # Main routine
 print(formatter("=", "Welcome to the Maori quizzes"))
+# Ask user if they've played before
 played_before = yes_no_checker("Have you played before: ")
 
-# If users input is no show instructions
+# If users input is No show instructions
 if played_before == "No":
     instructions()
 
-# loop question
+# :oop question
 while True:
-    # if input 1 redirect to days of week if input 2 redirect to maori numbers
-    quiz_continue = continue_or_quit("Please choose one of the above options and press Enter")
+    # If input 1 redirect to days of week if input 2 redirect to maori numbers
+    quiz_continue = continue_or_quit("Please choose one of the above options and press Enter ")
     if quiz_continue == 1:
         days_of_week()
     elif quiz_continue == 2:

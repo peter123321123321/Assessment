@@ -1,40 +1,33 @@
-"""04_Maori_Days_Of_The_Week_V3
-converts 04_Maori_Days_Of_The_Week_V2 into a function
-make small quality of life changes
-e.g. better scoring, showing correct answer
+"""04_Maori_Days_Of_The_Week_V2
+Shortens code of 04_Maori_Days_Of_The_Week_V1
 """
+
 
 import random
 
+# Puts question and answers in the same list
+days_of_the_week = [["Monday", "rahina"], ["Tuesday", "ratu"], ["Wednesday", "raapa"],
+                    ["Thursday", "rapare"], ["Friday", "ramere"], ["Saturday", "rahoroi"],
+                    ["Sunday", "ratapu"]]
 
-def days_of_week():
+# Keeps track of player score and total questions
+player_score = 0
+total = 0
 
-    # Puts question and answers in the same list
-    days_of_the_week = [["Monday", "rahina"], ["Tuesday", "ratu"], ["Wednesday", "raapa"],
-                        ["Thursday", "rapare"], ["Friday", "ramere"], ["Saturday", "rahoroi"],
-                        ["Sunday", "ratapu"]]
+# Shuffles list
+random.shuffle(days_of_the_week)
+for i in days_of_the_week:
+    total += 1
 
-    # Keeps track of player score and total questions
-    player_score = 0
-    # Shuffles list
-    random.shuffle(days_of_the_week)
-    for i in days_of_the_week:
-        # Asks user for input
-        question = input(f"What is the maori word for {i[0]}").lower()
+    # Asks user for input
+    question = input(f"What is the maori word for {i[0]}")
 
-        # If user is correct print 'correct' anything else print 'incorrect'
-        if question == i[1]:
-            player_score += 1
-            print("Well done, you're correct")
-        else:
-            print(f"Incorrect, the answer was {i[1]}")
-
-    # Shows player their final score
-    if player_score != 7:
-        print(f"Your final score is {player_score}/7")
+    # If user is correct print 'correct' anything else print 'incorrect'
+    if question == i[1]:
+        print("correct")
+        player_score += 1
     else:
-        print(f"CONGRATULATIONS - You got a perfect score")
+        print("Incorrect")
 
-
-# Main Routine
-days_of_week()
+# Shows player their final score
+print(f"You got {player_score}/{total}")

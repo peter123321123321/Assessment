@@ -1,4 +1,5 @@
 """06_Statement_formatter_v1
+formats text
 """
 
 # symbol around text

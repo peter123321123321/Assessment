@@ -1,4 +1,5 @@
-""""""
+"""0_Base_component_V1
+"""
 
 # Functions go here
 import random
@@ -35,28 +36,31 @@ def instructions():
 
 def continue_or_quit():
     try:
+        # loop quiz
         while True:
+            # sho user options
             print("[1] Days of the week in Maori\n"
                   "[2] Numbers in Maori\n"
                   "[3] Leave the quiz")
             # Ask user if they want to continue or quit
             choice = int(input("What would you like to try"))
 
-            # If input is 1
+            # If input is 1 redirect to days of the week
             if choice == 1:
                 days_of_week()
                 break
-            # If input is 2
+            # If input is 2 redirect to maori numbers
             elif choice == 2:
                 print("maori numbers")
                 break
-            # If input is 3
+            # If input is 3 print goodbye and exit
             elif choice == 3:
                 print("Goodbye")
                 exit()
             # else input is not yes or no print error message
             else:
                 print("Error - Please enter a number between 1 and 3")
+    # if error print error message
     except ValueError:
         print("Error - Please enter a number between 1 and 3")
 
